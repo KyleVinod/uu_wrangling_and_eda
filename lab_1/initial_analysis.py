@@ -55,7 +55,7 @@ print(largestFlowCountryToInstitution, '\n')
 giftCrossTab = pd.crosstab(index=df["Country of Giftor"], columns=df["Institution Name"], values=df["Foreign Gift Amount"], aggfunc='sum', dropna=False).fillna(0)
 print(giftCrossTab, '\n')
 
-topUSGifters = df.groupby("Country of Giftor")["Foreign Gift Amount"].sum().sort_values(ascending=False).head(10)
+topUSGifters = df.groupby("Giftor Name")["Foreign Gift Amount"].sum().sort_values(ascending=False).head(10)
 print(topUSGifters, '\n')
 
 df = pd.read_csv('lab_1/ForeignGifts_edu.csv',low_memory=False)
